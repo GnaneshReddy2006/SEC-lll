@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style> 
+   
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color:  #7d99aa;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+
+    }
+    fieldset{
+        border-color: black ;
+        border-radius: 10px;
+        border-width: 2px 2px 5px 2px;
+        background-color: #66c4ff;
+    }
+
+    label{
+          font-style:normal;
+          font-size: larger;
+          text-shadow:2px;
+        }
+
+      form{
+        height: 60%;
+        padding: 0;
+        margin: 0;
+        margin-top: 20px;
+        box-shadow:90%
+      } 
+       
+      legend{
+        font-weight:bold;
+    }
+    #submit{
+        background-color: #d3a25e;
+    }
+   #submit:hover{
+    font-size:medium ;
+    background-color: rgb(231, 209, 83);
+    
+   }
+   #submit:active{
+    background-color: crimson;
+   }
+    
+   @media(max-width:600px){
+
+   }
+  @media(min-width:601px){
+    
+   }
+    </style>
+</head>
+<body>
+
+   
+     <form action=""> 
+           <fieldset>
+
+              <legend> Application form</legend>
+            
+            <label> Name:</label>
+            <input type="text" placeholder="full name" required> <br><br>
+            <lable>DOB:</lable>
+            <input type="date" placeholder="DD-MM-YYYY" required> <br><br>
+            <lable>Mail:</lable>
+            <input type="mail" placeholder="abcd@gmail.com" required> <br><br>
+            <label>Gender:</label>
+            <input type="radio" name="Gender"> Male
+            <input type="radio" name="Gender"> Female  <br><br>
+            <label> Languages:</label> <br>
+            <input type="checkbox" name="languages"> TELUGU <br>
+            <input type="checkbox" name="languages"> HINDHI <br>
+            <input type="checkbox" name="languages"> ENGLISH <br>
+            <input type="checkbox" name="languages"> OTHERS <br> <br>
+            <label> Country:</label>
+            <select name="Country" id="Country">
+                <option value="Country">select</option>
+                <option value="Country">India</option>
+                <option value="Country">USA</option>
+                <option value="Country">UK</option>
+                <option value="Country">Others</option>
+            </select> <br> <br>
+
+            <label> ID proof:</label>
+            <input type="file"> <br><br>
+             <input type="submit" id="submit">
+
+           </fieldset>
+     </form>
+    
+</body>
+</html>

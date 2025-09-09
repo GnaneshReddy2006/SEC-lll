@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta chatset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+
+     <style> body{
+        font-family: Arial, Helvetica, sans-serif;
+         display: center;
+         background-color: rgb(226, 225, 225);
+        }
+        header{
+            background-color: hsl(219, 74%, 72%);
+            color: rgb(255, 255, 255);
+            padding: 15px;
+            text-align: center;
+        }
+        nav ul{display: flex; flex-wrap: wrap; align-items: center; justify-content: center;  }
+        nav li{ margin:0 15px;}
+        nav a{ color: white; text-decoration: none;}
+        .container{display: flex; padding: 15px; justify-content: center;}
+        .card{ border: solid black; border-width: .5px; border-radius: 5px; padding: 30px ; display: flex; flex-wrap: wrap; margin: 30px;background-color: rgb(126, 126, 126); }
+        footer{
+            background-color: hsl(219, 74%, 72%);; text-align: center; margin-top: 15%; height: 35%; color: #000000; font-size: large;
+        }
+        footer span{ margin: 10px;}
+
+        @media(max-width:600px){
+            nav ul{ flex-:column; align-items: center;}
+            nav li{ margin: 10px;}
+            .card{ flex:1 1 100%; max-width:100%}
+        }
+
+         @media(min-width:601px) and (max-width:1024px){
+            .card{ flex:1 1 45%; max-width:45%}
+        }
+
+        @media(min-width:1025px){
+            .card{ flex:1 1 30%; max-width:30%}
+        }
+     </style>
+</head>
+<body>
+
+    <header>
+        <div class="header">
+                <div><h2>GNANESH</h2></div>
+                <div> 
+                     <nav>
+                        <ul>
+                          <li><a href="#">Abot</a></li>
+                          <li><a href="#">Project</a></li>
+                          <li><a href="#">Contact</a></li>
+                    </ul>
+                     </nav>
+                </div>
+
+        </div>
+    </header>`
+
+    <main>
+        <div class="container">
+           <div class="card"> <h2>project-1</h2></div>
+           <div class="card"> <h2>project-2</h2></div>
+           <div class="card"> <h2>project-3</h2></div>
+        </div>
+    </main>
+
+    <footer>
+        <div> <span> &copy; &nbsp;  234g1a0546@srit.ac.in &nbsp;  123-234-345</span></div>
+    </footer>
+    
+</body>
+</html>  

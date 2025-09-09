@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+form {
+    display: grid;
+    gap: 20px;
+}
+
+/* Grid Layout */
+.form-field {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+/* Form Field Styles */
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    width: auto;
+}
+
+button {
+    background-color: #774caf;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 1s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .form-field {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Desktop View */
+@media (min-width: 769px) {
+    .form-field {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .form-field label {
+        text-align: right;
+        padding-right: 10px;
+    }
+
+    .form-field input, .form-field select {
+        width: 100%;
+    }
+
+    .gender-options {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .gender-options label {
+        margin-right: 20px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form action="#" method="post">
+            <div class="form-field">
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full-name" required>
+            </div>
+
+            <div class="form-field">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-field">
+                <label for="course">Course Selection:</label>
+                <select id="course" name="course">
+                    <option value="course1">Course 1</option>
+                    <option value="course2">Course 2</option>
+                    <option value="course3">Course 3</option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label>Gender:</label>
+                <div class="gender-options">
+                    <label for="male"><input type="radio" id="male" name="gender" value="male"> Male</label>
+                    <label for="female"><input type="radio" id="female" name="gender" value="female"> Female</label>
+                    <label for="other"><input type="radio" id="other" name="gender" value="other"> Other</label>
+                </div>
+            </div>
+
+            <div class="form-field">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-field">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+
+            <div class="form-field">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
