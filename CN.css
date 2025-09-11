@@ -1,0 +1,52 @@
+.details{
+    height: 35px;
+    background-color: black;
+}
+.LOGO{
+    margin-left: 20px;
+}
+img{
+    height: 100px;
+    width: 150px;
+}
+.header{
+    display:flex;
+    align-items: center;
+   
+
+}
+
+.menu{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; 
+    justify-content: center;
+   
+}
+
+#m1{
+    font-size: small;
+    margin: 10px;
+}
+
+.search input{
+    background-color: rgb(228, 237, 245);
+    border:none;
+    height: 20px;
+    width: 140px;
+}
+
+.profile{
+    display: flex;
+}
+ 
+#l1{
+    margin:10px
+}
+
+.main{
+    height: 570px;
+    width: 100%;
+    background-image:url(cn.png) ;
+    background-size:cover;
+}
