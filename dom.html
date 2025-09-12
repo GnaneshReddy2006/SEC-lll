@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> body{
+        background-color: beige; }
+        </style>
+</head>
+<body>
+   <h1 id="title">Welcome to javascript</h1>
+   <input type="text" id="nameInput" placeholder="Enter your name"> <br> <br>
+   <button id="greetBtn">Greet Me</button> <br> <br>
+   <button id="toggleBtn">Toggle Background</button> <br> <br>
+    <script >
+        let title=document.getElementById('title');
+title.innerText="Dom changed";
+let greetBtn=document.getElementById('greetBtn')
+greetBtn.addEventListener('click',()=>{
+    let name=document.getElementById('nameInput').value;
+   if(name){
+    document.getElementById('title').innerText="morning";
+   }
+   else{
+    alert("please enter name");
+   }
+    
+})
+let isBlue=false;
+let toggleBtn=document.getElementById('toggleBtn')
+toggleBtn.addEventListener('click',()=>{
+    if(isBlue){
+        document.body.style.background='White';
+    }
+    else{
+        document.body.style.background='lightBlue';
+    }
+    
+})
+    </script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 // js.js
 function a() {
-  console.log('hello js');
+  console.log("nice comeback!")
 }
 
 let b = document.getElementById('button'); 

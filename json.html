@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+         
+         let stu={
+            name:"546",
+            age:21,
+            marks:[66,68,67]
+         };
+         console.log(stu);
+         let stuJSON=JSON.stringify(stu);
+         console.log("json format",stuJSON);
+         
+         let stringObject=JSON.parse(stuJSON);
+         console.log("parse object",stringObject);
+
+         let book=[
+            {title:"abv", aut:"xyz", price:200},
+            {title:"abc", aut:"xya", price:300},
+         ]
+
+         console.log(book.map((b)=>b.title));
+            
+    </script>    
+</body>
+</html>

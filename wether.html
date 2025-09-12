@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather</title>
+    <style>
+        	
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background: #9df0f0;
+}
+
+h1 {
+  color: #333;
+}
+
+section {
+  background: rgb(201, 231, 231);
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 400px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+input, button {
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+}
+
+button {
+  background: #5294da;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0075f3;
+}
+
+#Result{
+  margin-top: 20px;
+  font-size: 18px;
+    color: #363434;
+    background-color: rgb(190, 255, 233);
+}
+    </style>
+</head>
+<body>
+    
+    <h1>JSON & API'S</h1>
+    <section>
+        <h2>weather info</h2>
+        <input type="text" id="city" placeholder="Enter city name">
+        <button id="fetchBtn">GET WEATHER</button>
+        <div id="Result"></div>
+    </section>
+
+    <script>
+
+        // fetch("https://jsonplaceholder.typicode.com/posts/1")
+        // .then(response=>response.json())
+        // .then(json=>console.log(json))
+        // .catch(err=>console.log(err));
+
+        fetch("https://jsonplaceholder.typicode.com/users")
+        .then(response=>response.json())
+        .then(users=>{
+            let output= "<h3>Users list</h3>";
+            users.forEach(user => {
+            output+= `<li>${user.username} - ${user.email})</li>`;                
+            });
+            output+="</ul>";
+            document.body.innerHTML+=output;
+        })
+    </script>
+</body>
+</html>

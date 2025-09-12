@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: rgb(142, 213, 236);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .section{
+            background-color: rgb(230, 217, 173);
+            border-radius: 10px;
+            padding: 10px;
+            justify-content: center;
+           margin-top: 12%;
+           color: solid black 10px;
+        }
+
+         button:hover{
+            background-color: rgb(197, 245, 197);
+            cursor: pointer;
+            color: black ;
+            font-size:15px;
+            border: 1px solid rgb(97, 93, 93);
+        }
+        .result{
+            margin-top: 5px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="section">
+    
+    <label> Name:</label>
+    <input type="text" id ="name" placeholder="Enter your name"> <br> <br>
+    <label> Age:</label>    
+    <input type="number" id ="age" placeholder="Enter your age"> <br> <br>
+    <label>Country:</label>
+    <input type="text" id ="country" placeholder="Enter your country"> <br> <br>
+    <button onclick="submit()">Submit</button>  <br><br>    
+    <div class="result"></div>
+</div>
+
+<script>
+
+    function submit(){
+        let name=document.getElementById("name").value;
+        let age=document.getElementById("age").value;
+        let country=document.getElementById("country").value;
+        let a=[{
+            Name:name,
+            Age:age,
+            Country:country
+        }]
+        document.querySelector(".result").innerText=JSON.stringify(a);
+    }
+</script>
+</body>
+</html>
