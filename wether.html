@@ -10,7 +10,7 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   padding: 20px;
-  background: #9df0f0;
+  background: #96e9e9;
 }
 
 h1 {
@@ -48,7 +48,8 @@ button:hover {
   margin-top: 20px;
   font-size: 18px;
     color: #363434;
-    background-color: rgb(190, 255, 233);
+    background-color: rgb(193, 250, 231);
+    border-radius: 5px;
 }
     </style>
 </head>
@@ -69,16 +70,55 @@ button:hover {
         // .then(json=>console.log(json))
         // .catch(err=>console.log(err));
 
-        fetch("https://jsonplaceholder.typicode.com/users")
-        .then(response=>response.json())
-        .then(users=>{
-            let output= "<h3>Users list</h3>";
-            users.forEach(user => {
-            output+= `<li>${user.username} - ${user.email})</li>`;                
-            });
-            output+="</ul>";
-            document.body.innerHTML+=output;
-        })
+        // fetch("https://jsonplaceholder.typicode.com/users")
+        // .then(response=>response.json())
+        // .then(users=>{
+        //     let output= "<h3>Users list</h3>";
+        //    });
+        //        users.forEach(user => {
+        //     output+= `<li>${user.username} - ${user.email})</li>`;                
+        //   output+="</ul>";
+        //     document.body.innerHTML+=output;
+        // })
+
+
+
+                    
+        const cityCoords = {
+        "bangalore": { lat: 12.97, lon: 77.59 },
+        "delhi": { lat: 28.61, lon: 77.20 },
+        "mumbai": { lat: 19.07, lon: 72.87 },
+        "london": { lat: 51.51, lon: -0.13 },
+        "new york": { lat: 40.71, lon: -74.01 }
+        };
+        
+        let fetchBtn=document.getElementById("fetchBtn");
+        fetchBtn.addEventListener("click",()=>{
+            let city=document.getElementById("city").value.toLowerCase();
+            if(city in cityCoords){
+                let coords=cityCoords[city];
+                let url= `https://api.open-meteo.com/v1/forecast?latitude=${coords.lat}&longitude=${coords.lon}&current_weather=true`
+
+                fetch(url)
+                .then(response=>response.json()
+                .then(data =>{
+                    let weather=data.current_weather;
+                    document.getElementById("Result").innerHTML=`<h3>Weather in ${city.charAt(0).toUpperCase() + city.slice(1)}</h3>
+                    <p>Temperature: ${weather.temperature}</p>
+                    <p>Wind Speed: ${weather.windspeed} km/h</p>
+                    <p>Wind Direction: ${weather.winddirection}</p>`;
+                }))
+
+            }
+               
+             
+            else{
+                alert("City not found in the list. Please try Bangalore, Delhi, Mumbai, London, or New York.");
+            }
+        });
+
+
+
     </script>
 </body>
 </html>

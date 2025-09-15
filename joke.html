@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joke Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background: #92e9e9;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    section {
+      background: rgb(201, 231, 231);
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      max-width: 400px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    button {
+      padding: 10px;
+      margin: 5px;
+      font-size: 16px;
+      background: #5294da;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0075f3;
+    }
+#Result{ margin-top: 20px; 
+        font-size: 18px; 
+        color: #1d1b1b; 
+        background-color: rgb(193, 250, 231); 
+        border-radius: 5px; }
+  </style>
+</head>
+<body>
+    
+  <h1>GET a JOKE</h1>
+  <section>
+    <h2>JOKES ZONE</h2>
+    <button onclick="getJoke()" id="j">GET JOKE</button>
+    <!-- <button onclick="getJoke()">NEXT JOKE</button> -->
+    <div id="Result"></div>
+  </section>
+
+  <script>
+    function getJoke() {
+      document.getElementById("j").innerText = "NEXT JOKE";
+      
+      fetch('https://v2.jokeapi.dev/joke/Any')
+        .then(response => response.json())
+        .then(data => {
+          let jokeText = '';
+          if (data.type === 'single') {
+            jokeText = data.joke;
+          } else if (data.type === 'twopart') {
+            jokeText = `${data.setup} <br><br> ${data.delivery}`;
+          }
+          document.getElementById('Result').innerHTML = jokeText;
+        })
+        .catch(error => {
+          console.error('Error fetching joke:', error);
+          document.getElementById('Result').innerHTML = 'Failed to fetch a joke. Please try again.';
+        });       
+      
+    }
+  </script>
+
+</body>
+</html>
